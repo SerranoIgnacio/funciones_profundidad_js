@@ -45,7 +45,7 @@ e imprima cada valor dentro de la variable "colores"
 
 La variable colores no deberá pasarse como parámetro,
 sino que debe utilizarse como variable global.
-
+##
 */
 
 const colores = ["azul", "verde", "amarillo", "rojo"];
