@@ -15,28 +15,21 @@ Verifique que en consola no figura ningún error en alguna de ellas
 console.log("Declaración de eventos");
 const boton = document.querySelector("button");
 
-boton.addEventListener("click", function() {
+boton.addEventListener("click", () => {
     boton.className = "btnClick";
 });
 
-boton.addEventListener("mouseout", function() {
+boton.addEventListener("mouseout", () => {
     boton.className = "btnOut";
 });
 
-console.log("Declaración de función una función común");
-function nombreCompleto(nombre, apellido) {
-    const completo = nombre + "_" + apellido;
-    return completo;
- }
-
+console.log("Declaración de función una función común - transformada a flecha");
+const nombreCompleto = (nombre, apellido) => (nombre + "_" + apellido);
 console.log(nombreCompleto("Max", "Power"));
 
-console.log("Declaración de función anónima");
-const iniciales = function (nombre, apellido) {
-    return nombre[0].toUpperCase() + "_" + apellido[0].toUpperCase();
-}
-
-console.log(iniciales("Jean", "Grey"));
+console.log("Declaración de función anónima - a flecha");
+const iniciales = (nombre, apellido) => (nombre[0].toUpperCase() + "_" + apellido[0].toUpperCase());
+console.log(iniciales("jean", "grey"));
 
 /* 2 - Enunciado
 
@@ -48,4 +41,10 @@ sino que debe utilizarse como variable global.
 ##
 */
 
-const colores = ["azul", "verde", "amarillo", "rojo"];
+let colores = ["azul", "verde", "amarillo", "rojo"];
+var func = () => {
+    for (let color of colores){
+        console.log(color);
+    } 
+}
+func(colores);
